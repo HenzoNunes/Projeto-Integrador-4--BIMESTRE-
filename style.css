@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+/* Seção de textos e fontes */
+
+:root{
+    --font-main: 'Inter', sans-seriff;
+    --color-bg: #0f172a;
+    --color-text: #e5e7eb;
+    --color-accent: #ef4444;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.title{
+    padding: 32px;
+    background-color: #020617;
+}
+.title h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.main{
+    display: grid;
+    gap: 32px;
+    padding: 48px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.another_title{
+    background-color: #020617;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.another_title h2{
+    color: var(--color-accent);
+    margin-bottom: 16px;
+}
+
+.another_title p{
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.another_other_title{
+    font-family: 'Inter';
+    font-weight: 600;
+    display: flex;
+}
+
+.another_other_title p{
+    font-size: 16px;
+}
+
+.text{
+    font-family: 'Inter';
+    display: flex;
+}
+
+.link{
+    color: white;
+    display: flex;
+}
+
+footer{
+    padding: 24px;
+    text-align: center;
+    background-color: #020617;
+    font-size: 14px;
+}
+
+/* Corpo do site */
+
+.img{
+    
+}
+
+.cabeçalho{
+    
+}
+
+.corpo{
+
+}
+
+.cards{
+
+}
+
+.rodape{
+
+}
+
+/*  */
