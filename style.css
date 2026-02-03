@@ -5,8 +5,8 @@
 
 :root{
     --font-main: 'Inter', sans-seriff;
-    --color-bg: #0f172a;
-    --color-text: #e5e7eb;
+    --color-bg: #e5e7eb;
+    --color-text: #0f172a;
     --color-accent: #ef4444;
 }
 
@@ -24,7 +24,6 @@ body{
 
 .title{
     padding: 32px;
-    background-color: #020617;
 }
 .title h1{
     font-size: 32px;
@@ -39,7 +38,6 @@ body{
 }
 
 .another_title{
-    background-color: #020617;
     padding: 32px;
     border-radius: 8px;
 }
@@ -77,14 +75,16 @@ body{
 footer{
     padding: 24px;
     text-align: center;
-    background-color: #020617;
     font-size: 14px;
 }
 
 /* Corpo do site */
 
-.img{
-    
+.vid{
+    display: flex;
+    border: 2px solid #020617;
+    width: 100%;
+    height: auto;
 }
 
 .cabeçalho{
@@ -92,7 +92,10 @@ footer{
 }
 
 .corpo{
-
+    width: 1920px;
+    height: 34px;
+    background-color: #200617;
+    border: 2px solid #020617;
 }
 
 .cards{
