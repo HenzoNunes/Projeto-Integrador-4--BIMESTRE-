@@ -4,32 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site da Riot</title>
-    <script src="Javascript.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="corpo"></div>
-  <video class="vid"><source src="img/rg-brand-cinematic.mp4"  type="video/mp4"></video>
-    <header class="title">
-      <a href=""></a>
-        <h1>Site do Projeto Integrador - Hospedado no Vercel</h1>
-        <nav></nav>
-    </header>
+  <header class="cabecalho-riot">
+    <div class="cabecalho-container">
+      <a href="#" class="logo-riot" id="logo-link">
+        <img src="img/Logo.png" alt="Riot Games Logo">
+        <div class="logo-texto">
+          <span class="riot-games">RIOT GAMES</span>
+          <span class="brasil">BRASIL</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#nossos-jogos-galeria" class="nav-link-interno">NOSSOS JOGOS</a>
+        <a href="#atualizacoes" class="nav-link-interno">ATUALIZAÇÕES</a>
+        <a href="#sobre-nos" class="nav-link-interno">SOBRE NÓS</a>
+      </nav>
+      <div class="cabecalho-direita">
+        <button class="btn-login" id="btn-login">LOGIN</button>
+        <div class="icones-sociais">
+          <a href="https://www.instagram.com/riotgames/" target="_blank" rel="noopener noreferrer" class="icone" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/riotgames" target="_blank" rel="noopener noreferrer" class="icone" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@riotgames" target="_blank" rel="noopener noreferrer" class="icone" aria-label="YouTube Brasil"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <video class="vid" autoplay muted loop playsinline>
+    <source src="img/rg-brand-cinematic.mp4" type="video/mp4">
+  </video>
 
-    <main>
-        <section class="another_title">
-          <h2>Raze</h2>
-          <p>Raze chega do Brasil com uma explosão de carisma e armas enormes. Com seu estilo de jogo "porradeiro", ela é craque em desentocar inimigos entrincheirados e limpar espaços apertados com uma bela dose de BUUUM!</p>
-        </section>
-        
-        
-        <section class="another_title">
-          <h2>Rammus</h2>
-          <p>Idolatrado por muitos, dispensado por alguns e misterioso para todos, Rammus é um ser curioso e enigmático. Protegido por um casco espetado, ele inspira teorias cada vez mais divergentes sobre sua origem por onde quer que passe — de semideus, a oráculo sagrado, a uma fera qualquer que foi transformada por magia. Qualquer que seja a verdade, Rammus mantém seus pareceres e não interrompe seu caminho por ninguém enquanto vaga sem rumo pelo deserto shurimane.</p>
-        </section>
-      </main>
-      <footer>
-        <p></p>
-      </footer>
+  <main>
+    <!-- Seção Hub - Boas-vindas -->
+    <section class="hub-section" id="hub">
+      <div class="hub-container">
+        <img src="img/Rammus.png" alt="Rammus" class="hub-rammus">
+        <div class="hub-texto">
+          <p>E AÍ, GALERA! BEM-VINDOS AO HUB DA RIOT GAMES <span class="brasil">BRASIL</span></p>
+          <i class="fa-solid fa-chevron-down hub-arrow" id="hub-arrow" role="button" tabindex="0" aria-label="Rolar para seção de conteúdo"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards: Notícias, Campeonatos, Nossos Jogos -->
+    <section class="placeholders-section" id="placeholders">
+      <article class="content-card content-card-imagem" id="card-noticias">
+        <div class="card-imagem-wrapper">
+          <img src="img/nekko_lol.jpeg" alt="League of Legends - Campeões">
+        </div>
+        <div class="card-texto">
+          <h3>NOTÍCIAS</h3>
+          <p>Fique por dentro das últimas novidades do universo Riot. O League of Legends continua a evoluir com novos campeões e eventos épicos que movimentam a comunidade. O VALORANT traz agentes inovadores e mapas estratégicos a cada temporada. As premiações do CBLOL celebram os melhores talentos do Brasil, enquanto eventos especiais de fim de ano reúnem jogadores de todo o mundo em experiências únicas.</p>
+        </div>
+      </article>
+      <article class="content-card content-card-imagem" id="card-campeonatos">
+        <div class="card-imagem-wrapper">
+          <img src="img/loud_cblol.webp" alt="CBLOL - Campeonato Brasileiro">
+        </div>
+        <div class="card-texto">
+          <h3>CAMPEONATOS</h3>
+          <p>A cena competitiva da Riot Games no Brasil é uma das mais apaixonadas do mundo. O CBLOL emociona milhões de fãs a cada temporada com jogadas históricas e rivalidades memoráveis. O VCT Brasil coloca nossos melhores jogadores de VALORANT no cenário global. O Wild Rift Icons traz o melhor do mobile para o palco internacional. Acompanhe os calendários, resultados e destaques dos principais torneios.</p>
+        </div>
+      </article>
+      <article class="content-card content-card-imagem" id="card-nossos-jogos">
+        <div class="card-imagem-wrapper">
+          <img src="img/runeterra.png" alt="Universo Runeterra">
+        </div>
+        <div class="card-texto">
+          <h3>NOSSOS JOGOS</h3>
+          <p>Conheça o universo de jogos da Riot Games. Do icônico League of Legends ao tático VALORANT, do estratégico Teamfight Tactics ao imersivo Legends of Runeterra e ao dinâmico Wild Rift no mobile. Em breve, o 2XKO chega para revolucionar os jogos de luta. Cada título oferece experiências únicas dentro do rico universo de Runeterra.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Seção Atualizações - Updates recentes -->
+    <section class="conteudo-section" id="atualizacoes">
+      <h2>ATUALIZAÇÕES</h2>
+      <p class="section-descricao">As atualizações mais recentes dos nossos jogos.</p>
+      <div class="updates-lista">
+        <article class="update-item update-com-imagem">
+          <img src="img/nekko_lol.jpeg" alt="League of Legends">
+          <div class="update-conteudo">
+            <span class="update-jogo">League of Legends</span>
+            <span class="update-versao">Patch 14.24</span>
+            <p>Ajustes de balanceamento em diversos campeões garantem que cada partida seja justa e competitiva. Correções de bugs e melhorias de performance tornam a experiência ainda mais fluida para milhões de jogadores ao redor do mundo.</p>
+          </div>
+        </article>
+        <article class="update-item update-com-imagem">
+          <img src="img/valorant.webp" alt="VALORANT">
+          <div class="update-conteudo">
+            <span class="update-jogo">VALORANT</span>
+            <span class="update-versao">Episódio 8 Act 1</span>
+            <p>Novo agente chega ao roster com habilidades únicas que mudam o meta. Mapas atualizados trazem novas estratégias e posições de defesa e ataque. O competitive nunca foi tão emocionante.</p>
+          </div>
+        </article>
+        <article class="update-item update-com-imagem">
+          <img src="img/tft.jpg" alt="Teamfight Tactics">
+          <div class="update-conteudo">
+            <span class="update-jogo">Teamfight Tactics</span>
+            <span class="update-versao">Set 11</span>
+            <p>Novo set com mecânicas inéditas, campeões reimaginados e sinergias que vão desafiar até os melhores estrategistas. Cada partida é uma nova oportunidade de descobrir combinações vencedoras.</p>
+          </div>
+        </article>
+        <article class="update-item update-com-imagem">
+          <img src="img/vivo_wildwift.webp" alt="Wild Rift">
+          <div class="update-conteudo">
+            <span class="update-jogo">Wild Rift</span>
+            <span class="update-versao">5.0</span>
+            <p>Novos campeões chegam ao mobile com controles otimizados. Skins exclusivas e melhorias no modo ranked elevam a experiência competitiva na palma da sua mão.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Nossos Jogos - Galeria -->
+    <section class="conteudo-section jogos-galeria" id="nossos-jogos-galeria">
+      <h2>NOSSOS JOGOS</h2>
+      <p class="section-descricao">Cada título oferece uma experiência única dentro do universo Riot.</p>
+      <div class="jogos-grid">
+        <div class="jogo-item">
+          <div>
+            <img src="img/valorant.webp" alt="VALORANT">
+          </div>
+          <h4>VALORANT</h4>
+          <p>Tiro tático 5v5 com agentes e habilidades únicas.</p>
+        </div>
+        <div class="jogo-item">
+          <div>
+            <img src="img/tft.jpg" alt="Teamfight Tactics">
+          </div>
+          <h4>Teamfight Tactics</h4>
+          <p>Auto battler estratégico com os campeões de LoL.</p>
+        </div>
+        <div class="jogo-item">
+          <div>
+            <img src="img/vivo_wildwift.webp" alt="Wild Rift">
+          </div>
+          <h4>Wild Rift</h4>
+          <p>League of Legends otimizado para mobile.</p>
+        </div>
+        <div class="jogo-item">
+          <div>
+            <img src="img/2xko.webp" alt="2XKO">
+          </div>
+          <h4>2XKO</h4>
+          <p>Jogo de luta com personagens de Runeterra. Em breve.</p>
+        </div>
+        <div class="jogo-item">
+          <div>
+            <img src="img/runeterra.png" alt="Legends of Runeterra">
+          </div>
+          <h4>Legends of Runeterra</h4>
+          <p>Card game estratégico no universo de Runeterra.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section class="conteudo-section" id="sobre-nos">
+      <h2>SOBRE NÓS</h2>
+      <div class="sobre-conteudo">
+        <div class="sobre-imagem">
+          <img src="img/runeterra.png" alt="Universo Runeterra">
+        </div>
+        <div class="sobre-textos">
+          <p>A Riot Games foi fundada em 2006 com a missão de desenvolver, publicar e apoiar os melhores jogos possíveis para os jogadores. Com sede em Los Angeles e escritórios ao redor do mundo, somos responsáveis por títulos que definiram gerações: League of Legends, VALORANT, Teamfight Tactics e Wild Rift.</p>
+          <p>Nossa filosofia é colocar os jogadores no centro de tudo que fazemos. Acreditamos que jogos podem criar experiências significativas e comunidades duradouras. O Brasil é uma região fundamental para a Riot, com uma base de jogadores apaixonada e uma cena competitiva vibrante no CBLOL e no VCT que inspira o mundo inteiro.</p>
+          <p>Além dos jogos, investimos fortemente em esports, música, animação e conteúdo que expande o universo de Runeterra. Arcane, nossa série animada, levou milhões a conhecerem as histórias por trás dos campeões. Estamos comprometidos em entregar experiências de alta qualidade para nossos jogadores em todo o mundo.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Seção Ajuda - Aparece apenas ao clicar em Suporte -->
+  <section class="ajuda-section ajuda-oculta" id="ajuda">
+    <div class="ajuda-container">
+      <button class="ajuda-fechar" id="btn-fechar-ajuda" aria-label="Fechar"><i class="fa-solid fa-times"></i></button>
+      <img src="img/raze_heaven_or_hell_valorant_spray_waterproof_sticker-removebg-preview-518520e2659b331d8517112276734463-640-0%201.png" alt="Raze" class="ajuda-raze">
+      <div class="ajuda-conteudo">
+        <div class="ajuda-barra">
+          <span>PRECISA DE <span class="ajuda-destaque">AJUDA?</span></span>
+        </div>
+        <div class="ajuda-placeholder" id="ajuda-placeholder">
+          <div class="ajuda-form-oculto" id="ajuda-form-container">
+            <span class="ajuda-categoria-label" id="ajuda-categoria-label"></span>
+            <textarea class="ajuda-textarea" id="ajuda-textarea" placeholder="Digite sua mensagem aqui..." rows="6"></textarea>
+            <button type="button" class="ajuda-btn-enviar" id="btn-enviar-ajuda">Enviar</button>
+          </div>
+        </div>
+        <div class="ajuda-cards">
+          <div class="ajuda-card" id="card-duvidas" role="button" tabindex="0" data-categoria="Tire suas dúvidas">
+            <i class="fa-solid fa-circle-question card-icon"></i>
+            <h3>TIRE SUAS DÚVIDAS</h3>
+          </div>
+          <div class="ajuda-card" id="card-melhorias" role="button" tabindex="0" data-categoria="Sugira melhorias">
+            <i class="fa-solid fa-circle-question card-icon"></i>
+            <h3>SUGIRA MELHORIAS</h3>
+          </div>
+          <div class="ajuda-card" id="card-bugs" role="button" tabindex="0" data-categoria="Relate bugs">
+            <i class="fa-solid fa-circle-question card-icon"></i>
+            <h3>RELATE BUGS</h3>
+          </div>
+          <div class="ajuda-card" id="card-outros" role="button" tabindex="0" data-categoria="Outros">
+            <i class="fa-solid fa-circle-question card-icon"></i>
+            <h3>OUTROS</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-retangulo">
+    <div class="footer-container">
+      <img src="img/Logo.png" alt="Riot Games Logo" class="footer-logo">
+      <a href="#" class="footer-suporte" id="link-suporte">Suporte</a>
+    </div>
+  </footer>
+
+  <!-- Modal de Login -->
+  <section class="login-modal login-modal-oculto" id="login-modal">
+    <div class="login-modal-container">
+      <button class="login-fechar" id="btn-fechar-login" aria-label="Fechar"><i class="fa-solid fa-times"></i></button>
+      <div class="login-header">
+        <img src="img/Logo.png" alt="Riot Games Logo" class="login-logo">
+        <h2>FAZER LOGIN</h2>
+        <p>Entre na sua conta Riot Games</p>
+      </div>
+      <form class="login-form" id="login-form">
+        <div class="form-group">
+          <label for="login-username">Nome de usuário</label>
+          <input type="text" id="login-username" name="username" placeholder="Digite seu nome de usuário" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Senha</label>
+          <input type="password" id="login-password" name="password" placeholder="Digite sua senha" required>
+        </div>
+        <div class="form-options">
+          <label class="checkbox-label">
+            <input type="checkbox" id="remember-me">
+            <span>Manter-me conectado</span>
+          </label>
+          <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn-login-submit">
+          <i class="fa-solid fa-arrow-right"></i> ENTRAR
+        </button>
+      </form>
+      <div class="login-footer">
+        <p>Não tem uma conta? <a href="#" class="create-account">Criar conta</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="Javascript.js"></script>
 </body>
 </html>
