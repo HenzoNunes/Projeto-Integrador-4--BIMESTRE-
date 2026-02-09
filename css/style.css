@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
-/* Seção de textos e fontes */
+/* SeÃ§Ã£o de textos e fontes */
 
 :root{
     --font-main: 'Inter', sans-seriff;
@@ -90,7 +90,7 @@ body{
     display: flex;
 }
 
-/* Rodapé - Retângulo com logo e Suporte */
+/* RodapÃ© - RetÃ¢ngulo com logo e Suporte */
 
 .footer-retangulo{
     display: flex;
@@ -186,7 +186,7 @@ body{
     object-fit: cover;
 }
 
-/* Cabeçalho Riot Games */
+/* CabeÃ§alho Riot Games */
 
 .cabecalho-riot{
     background-color: #0f172a;
@@ -458,7 +458,7 @@ body{
     }
 }
 
-/* Seção Hub - Boas-vindas */
+/* SeÃ§Ã£o Hub - Boas-vindas */
 
 .hub-section{
     background-color: #d1d5db;
@@ -513,7 +513,7 @@ body{
     color: var(--color-orange);
 }
 
-/* Seção Placeholders */
+/* SeÃ§Ã£o Placeholders */
 
 .placeholders-section{
     display: grid;
@@ -530,7 +530,7 @@ body{
     }
 }
 
-/* Content Cards - Notícias, Campeonatos, Nossos Jogos */
+/* Content Cards - NotÃ­cias, Campeonatos, Nossos Jogos */
 
 .content-card{
     background-color: var(--color-white);
@@ -608,7 +608,7 @@ body{
     margin-top: 12px;
 }
 
-/* Seções de Conteúdo - Atualizações e Sobre Nós */
+/* SeÃ§Ãµes de ConteÃºdo - AtualizaÃ§Ãµes e Sobre NÃ³s */
 
 .conteudo-section{
     max-width: 1200px;
@@ -644,7 +644,7 @@ body{
 
 .section-descricao{
     font-size: 16px;
-    color: #4b5563;
+    color: #ffffff;
     margin-bottom: 32px;
 }
 
@@ -854,7 +854,7 @@ body{
     border: 1px solid #d1d5db;
 }
 
-/* Seção Ajuda - Aparece só quando clica em Suporte */
+/* SeÃ§Ã£o Ajuda - Aparece sÃ³ quando clica em Suporte */
 
 .ajuda-section{
     display: none;
@@ -1303,6 +1303,80 @@ body{
     margin-top: 12px;
 }
 
+/* Randomizer */
+
+.randomizer-section{
+    text-align: center;
+    position: relative;
+    background:
+        linear-gradient(180deg, rgba(5, 10, 22, 0.86) 0%, rgba(5, 10, 22, 0.86) 100%),
+        url('../img/randomizer.png') center/cover no-repeat;
+    border-radius: 16px;
+}
+
+.randomizer-actions{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.btn-randomizer{
+    border: 2px solid var(--color-olive-dark);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(5, 10, 22, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-randomizer:hover{
+    transform: translateY(-2px);
+    border-color: var(--color-orange);
+    box-shadow: 0 12px 26px rgba(5, 10, 22, 0.28);
+}
+
+.randomizer-resultado{
+    display: flex;
+    justify-content: center;
+}
+
+.randomizer-card{
+    background-color: var(--color-white);
+    border-radius: 14px;
+    border: 2px solid var(--color-olive-dark);
+    box-shadow: 0 10px 26px rgba(5, 10, 22, 0.22);
+    padding: 20px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+.randomizer-card img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    object-fit: cover;
+}
+
+.randomizer-card h3{
+    color: var(--color-red-dark);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.randomizer-card p{
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 @media (max-width: 900px) {
     .content-card.destaque{
         grid-column: span 1;
@@ -1475,3 +1549,4 @@ body{
         transform: translateY(-50%);
     }
 }
+

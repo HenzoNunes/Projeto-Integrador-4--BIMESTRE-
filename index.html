@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -65,9 +65,14 @@
       </div>
     </div>
   </div>
-  <video class="vid" autoplay muted loop playsinline>
-    <source src="img/rg-brand-cinematic.mp4" type="video/mp4">
-  </video>
+  <div class="video-hero">
+    <video class="vid" autoplay muted loop playsinline>
+      <source src="img/rg-brand-cinematic.mp4" type="video/mp4">
+    </video>
+    <button class="video-sound-btn" id="btn-video-sound" aria-pressed="false" aria-label="Ativar som do vídeo">
+      <i class="fa-solid fa-volume-xmark"></i><span>Som</span>
+    </button>
+  </div>
 
   <main>
     <!-- Seção Hub - Boas-vindas -->
@@ -75,7 +80,7 @@
       <div class="hub-container">
         <img src="img/Rammus.png" alt="Rammus" class="hub-rammus">
         <div class="hub-texto">
-          <p>E AÍ, GALERA! BEM-VINDOS AO HUB DA RIOT GAMES <span class="brasil">BRASIL</span></p>
+          <p>EAE, GALERA! BEM-VINDOS AO HUB DA RIOT GAMES <span class="brasil">BRASIL</span></p>
           <i class="fa-solid fa-chevron-down hub-arrow" id="hub-arrow" role="button" tabindex="0" aria-label="Rolar para seção de conteúdo"></i>
         </div>
       </div>
@@ -89,7 +94,7 @@
         </div>
         <div class="card-texto">
           <h3>NOTÍCIAS</h3>
-          <p>Fique por dentro das últimas novidades do universo Riot. O League of Legends continua a evoluir com novos campeões e eventos épicos que movimentam a comunidade. O VALORANT traz agentes inovadores e mapas estratégicos a cada temporada. As premiações do CBLOL celebram os melhores talentos do Brasil, enquanto eventos especiais de fim de ano reúnem jogadores de todo o mundo em experiências únicas.</p>
+          <p>Fique por dentro das últimas novidades do universo Riot. O League of Legends continua a evoluir com novos Campeões e eventos épicos que movimentam a comunidade. O VALORANT traz agentes inovadores e mapas estratégicos a cada temporada. As premiações do CBLOL celebram os melhores talentos do Brasil, enquanto eventos especiais de fim de ano reúnem jogadores de todo o mundo em experiências únicas.</p>
         </div>
       </article>
       <article class="content-card content-card-imagem" id="card-campeonatos">
@@ -112,17 +117,28 @@
       </article>
     </section>
 
+    <!-- Seção Randomizer -->
+    <section class="conteudo-section randomizer-section" id="randomizer">
+      <h2>RANDOMIZER DE PERSONAGENS</h2>
+      <p class="section-descricao">Clique para sortear um personagem do League of Legends ou Valorant.</p>
+      <div class="randomizer-actions">
+        <button class="btn-randomizer" id="btn-sortear-valorant">Valorant</button>
+        <button class="btn-randomizer" id="btn-sortear-lol">League of Legends</button>
+      </div>
+      <div class="randomizer-resultado" id="randomizer-resultado"></div>
+    </section>
+
     <!-- Seção Atualizações - Updates recentes -->
     <section class="conteudo-section" id="atualizacoes">
       <h2>ATUALIZAÇÕES</h2>
-      <p class="section-descricao">As atualizações mais recentes dos nossos jogos.</p>
+      <p class="section-descricao">As Atualizações mais recentes dos nossos jogos.</p>
       <div class="updates-lista">
         <article class="update-item update-com-imagem">
           <img src="img/nekko_lol.jpeg" alt="League of Legends">
           <div class="update-conteudo">
             <span class="update-jogo">League of Legends</span>
             <span class="update-versao">Patch 14.24</span>
-            <p>Ajustes de balanceamento em diversos campeões garantem que cada partida seja justa e competitiva. Correções de bugs e melhorias de performance tornam a experiência ainda mais fluida para milhões de jogadores ao redor do mundo.</p>
+            <p>Ajustes de balanceamento em diversos Campeões garantem que cada partida seja justa e competitiva. Correções de bugs e melhorias de performance tornam a experiência ainda mais fluida para milhões de jogadores ao redor do mundo.</p>
           </div>
         </article>
         <article class="update-item update-com-imagem">
@@ -138,7 +154,7 @@
           <div class="update-conteudo">
             <span class="update-jogo">Teamfight Tactics</span>
             <span class="update-versao">Set 11</span>
-            <p>Novo set com mecânicas inéditas, campeões reimaginados e sinergias que vão desafiar até os melhores estrategistas. Cada partida é uma nova oportunidade de descobrir combinações vencedoras.</p>
+            <p>Novo set com mecânicas inéditas, Campeões reimaginados e sinergias que vão desafiar até os melhores estrategistas. Cada partida é uma nova oportunidade de descobrir combinações vencedoras.</p>
           </div>
         </article>
         <article class="update-item update-com-imagem">
@@ -146,7 +162,7 @@
           <div class="update-conteudo">
             <span class="update-jogo">Wild Rift</span>
             <span class="update-versao">5.0</span>
-            <p>Novos campeões chegam ao mobile com controles otimizados. Skins exclusivas e melhorias no modo ranked elevam a experiência competitiva na palma da sua mão.</p>
+            <p>Novos Campeões chegam ao mobile com controles otimizados. Skins exclusivas e melhorias no modo ranked elevam a experiência competitiva na palma da sua mão.</p>
           </div>
         </article>
       </div>
@@ -156,49 +172,57 @@
     <section class="conteudo-section jogos-galeria" id="nossos-jogos-galeria">
       <h2>NOSSOS JOGOS</h2>
       <p class="section-descricao">Cada título oferece uma experiência única dentro do universo Riot.</p>
-      <div class="jogos-grid">
-        <div class="jogo-item">
-          <div>
-            <img src="img/league_of_legendes.webp" alt="League of Legends">
+      <div class="jogos-slider">
+        <button class="jogos-seta" id="jogos-seta-esq" aria-label="Voltar jogos">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="jogos-track" id="jogos-track">
+          <div class="jogo-item">
+            <div>
+              <img src="img/league_of_legendes.webp" alt="League of Legends">
+            </div>
+            <h4>League of Legends</h4>
+            <p>League of Legends (LoL) é um jogo MOBA competitivo 5v5 onde equipes escolhem campeões únicos para destruir o Nexus na base inimiga</p>
           </div>
-          <h4>League of Legends</h4>
-          <p>League of Legends (LoL) é um jogo MOBA competitivo 5v5 onde equipes escolhem campeões únicos para destruir o Nexus na base inimiga</p>
-        </div>
-        <div class="jogo-item">
-          <div>
-            <img src="img/valorant.webp" alt="VALORANT">
+          <div class="jogo-item">
+            <div>
+              <img src="img/valorant.webp" alt="VALORANT">
+            </div>
+            <h4>VALORANT</h4>
+            <p>Tiro tático 5v5 com agentes e habilidades únicas.</p>
           </div>
-          <h4>VALORANT</h4>
-          <p>Tiro tático 5v5 com agentes e habilidades únicas.</p>
-        </div>
-        <div class="jogo-item">
-          <div>
-            <img src="img/tft.jpg" alt="Teamfight Tactics">
+          <div class="jogo-item">
+            <div>
+              <img src="img/tft.jpg" alt="Teamfight Tactics">
+            </div>
+            <h4>Teamfight Tactics</h4>
+            <p>Auto battler estratégico com os Campeões de LoL.</p>
           </div>
-          <h4>Teamfight Tactics</h4>
-          <p>Auto battler estratégico com os campeões de LoL.</p>
-        </div>
-        <div class="jogo-item">
-          <div>
-            <img src="img/vivo_wildwift.webp" alt="Wild Rift">
+          <div class="jogo-item">
+            <div>
+              <img src="img/vivo_wildwift.webp" alt="Wild Rift">
+            </div>
+            <h4>Wild Rift</h4>
+            <p>League of Legends otimizado para mobile.</p>
           </div>
-          <h4>Wild Rift</h4>
-          <p>League of Legends otimizado para mobile.</p>
-        </div>
-        <div class="jogo-item">
-          <div>
-            <img src="img/2xko.webp" alt="2XKO">
+          <div class="jogo-item">
+            <div>
+              <img src="img/2xko.webp" alt="2XKO">
+            </div>
+            <h4>2XKO</h4>
+            <p>Jogo de luta com personagens de Runeterra. Em breve.</p>
           </div>
-          <h4>2XKO</h4>
-          <p>Jogo de luta com personagens de Runeterra. Em breve.</p>
-        </div>
-        <div class="jogo-item">
-          <div>
-            <img src="img/runeterra.png" alt="Legends of Runeterra">
+          <div class="jogo-item">
+            <div>
+              <img src="img/runeterra.png" alt="Legends of Runeterra">
+            </div>
+            <h4>Legends of Runeterra</h4>
+            <p>Card game estratégico no universo de Runeterra.</p>
           </div>
-          <h4>Legends of Runeterra</h4>
-          <p>Card game estratégico no universo de Runeterra.</p>
         </div>
+        <button class="jogos-seta" id="jogos-seta-dir" aria-label="Avançar jogos">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </section>
 
@@ -214,7 +238,7 @@
         <div class="sobre-textos">
           <p>A Riot Games foi fundada em 2006 com a missão de desenvolver, publicar e apoiar os melhores jogos possíveis para os jogadores. Com sede em Los Angeles e escritórios ao redor do mundo, somos responsáveis por títulos que definiram gerações: League of Legends, VALORANT, Teamfight Tactics e Wild Rift.</p>
           <p>Nossa filosofia é colocar os jogadores no centro de tudo que fazemos. Acreditamos que jogos podem criar experiências significativas e comunidades duradouras. O Brasil é uma região fundamental para a Riot, com uma base de jogadores apaixonada e uma cena competitiva vibrante no CBLOL e no VCT que inspira o mundo inteiro.</p>
-          <p>Além dos jogos, investimos fortemente em esports, música, animação e conteúdo que expande o universo de Runeterra. Arcane, nossa série animada, levou milhões a conhecerem as histórias por trás dos campeões. Estamos comprometidos em entregar experiências de alta qualidade para nossos jogadores em todo o mundo.</p>
+          <p>Além dos jogos, investimos fortemente em esports, música, animação e conteúdo que expande o universo de Runeterra. Arcane, nossa série animada, levou milhões a conhecerem as histórias por trás dos Campeões. Estamos comprometidos em entregar experiências de alta qualidade para nossos jogadores em todo o mundo.</p>
         </div>
       </div>
     </section>
@@ -303,3 +327,6 @@
   <script src="javascript/script.js"></script>
 </body>
 </html>
+
+
+

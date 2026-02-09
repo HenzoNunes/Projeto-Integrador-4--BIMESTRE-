@@ -1,8 +1,8 @@
-// Riot Games Hub - JavaScript funcional
+﻿// Riot Games Hub - JavaScript funcional
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Botão LOGIN - Abre modal de login
+  // BotÃ£o LOGIN - Abre modal de login
   const btnLogin = document.getElementById('btn-login');
   const btnLoginMobile = document.getElementById('btn-login-mobile');
   const loginModal = document.getElementById('login-modal');
@@ -50,13 +50,13 @@ document.addEventListener('DOMContentLoaded', function() {
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const username = document.getElementById('login-username').value;
-      alert(`Bem-vindo, ${username}!\n\nEsta é uma demonstração. Em produção, isso faria login real.`);
+      alert(`Bem-vindo, ${username}!\n\nEsta Ã© uma demonstraÃ§Ã£o. Em produÃ§Ã£o, isso faria login real.`);
       fecharLoginModal();
       loginForm.reset();
     });
   }
 
-  // Logo - Volta ao topo da página
+  // Logo - Volta ao topo da pÃ¡gina
   const logoLink = document.getElementById('logo-link');
   if (logoLink) {
     logoLink.addEventListener('click', function(e) {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Seta do Hub - Faz scroll suave até a seção de placeholders
+  // Seta do Hub - Faz scroll suave atÃ© a seÃ§Ã£o de placeholders
   const hubArrow = document.getElementById('hub-arrow');
   const placeholdersSection = document.getElementById('placeholders');
   if (hubArrow && placeholdersSection) {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hubArrow.style.cursor = 'pointer';
   }
 
-  // Seção Ajuda - Cards abrem caixa de texto no placeholder
+  // SeÃ§Ã£o Ajuda - Cards abrem caixa de texto no placeholder
   const ajudaPlaceholder = document.getElementById('ajuda-placeholder');
   const ajudaFormContainer = document.getElementById('ajuda-form-container');
   const ajudaCategoriaLabel = document.getElementById('ajuda-categoria-label');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupCardClick(document.getElementById('card-bugs'));
   setupCardClick(document.getElementById('card-outros'));
 
-  // Botão Enviar - categoriza e mostra confirmação
+  // BotÃ£o Enviar - categoriza e mostra confirmaÃ§Ã£o
   if (btnEnviarAjuda && ajudaFormContainer && ajudaTextarea) {
     btnEnviarAjuda.addEventListener('click', function() {
       const mensagem = ajudaTextarea.value.trim();
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      // Simula envio - em produção isso iria para um servidor
+      // Simula envio - em produÃ§Ã£o isso iria para um servidor
       const dados = {
         categoria: categoriaSelecionada,
         mensagem: mensagem,
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Rodapé - Link "Suporte" mostra a seção "Precisa de ajuda"
+  // RodapÃ© - Link "Suporte" mostra a seÃ§Ã£o "Precisa de ajuda"
   const linkSuporte = document.getElementById('link-suporte');
   const secaoAjuda = document.getElementById('ajuda');
   const btnFecharAjuda = document.getElementById('btn-fechar-ajuda');
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // RodapÃ© flutuante no mobile - sobe ao rolar para baixo
+  // RodapÃƒÂ© flutuante no mobile - sobe ao rolar para baixo
   const footer = document.querySelector('.footer-retangulo');
   if (footer && window.matchMedia('(max-width: 700px)').matches) {
     let lastScrollY = window.scrollY;
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 
-  // BotÃ£o de som do vÃ­deo
+  // BotÃƒÂ£o de som do vÃƒÂ­deo
   const video = document.querySelector('.vid');
   const btnVideoSound = document.getElementById('btn-video-sound');
 
@@ -271,14 +271,14 @@ document.addEventListener('DOMContentLoaded', function() {
     btnVideoSound.addEventListener('click', function() {
       video.muted = !video.muted;
       btnVideoSound.setAttribute('aria-pressed', String(!video.muted));
-      btnVideoSound.setAttribute('aria-label', video.muted ? 'Ativar som do vÃ­deo' : 'Desativar som do vÃ­deo');
+      btnVideoSound.setAttribute('aria-label', video.muted ? 'Ativar som do vÃƒÂ­deo' : 'Desativar som do vÃƒÂ­deo');
       btnVideoSound.innerHTML = video.muted
         ? '<i class="fa-solid fa-volume-xmark"></i><span>Som</span>'
         : '<i class="fa-solid fa-volume-high"></i><span>Som</span>';
     });
   }
 
-  // CabeÃ§alho transparente no topo
+  // CabeÃƒÂ§alho transparente no topo
   const header = document.querySelector('.cabecalho-riot');
   function atualizarHeader() {
     if (!header) return;
@@ -315,7 +315,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Sobre nÃ³s - carousel com todas as fotos da pasta img (exclui Ã­cones/logos)
+  // Randomizer de personagens (dados do personagens.json)
+  const btnSortearValorant = document.getElementById('btn-sortear-valorant');
+  const btnSortearLol = document.getElementById('btn-sortear-lol');
+  const randomizerResultado = document.getElementById('randomizer-resultado');
+  let personagensData = null;
+
+  function mostrarPersonagem(personagem) {
+    if (!randomizerResultado || !personagem) return;
+    randomizerResultado.innerHTML = [
+      '<div class="randomizer-card">',
+      '<img src="' + personagem.imagem + '" alt="' + personagem.nome + '">',
+      '<h3>' + personagem.nome + '</h3>',
+      '<p>' + (personagem.descricao || '') + '</p>',
+      '</div>'
+    ].join('');
+  }
+
+  function sortear(lista) {
+    if (!lista || !lista.length) return null;
+    return lista[Math.floor(Math.random() * lista.length)];
+  }
+
+  function carregarPersonagens() {
+    return fetch('personagens.json')
+      .then(function(res) {
+        if (!res.ok) throw new Error('Erro ao carregar personagens.json');
+        return res.json();
+      })
+      .then(function(data) {
+        personagensData = data;
+        return data;
+      })
+      .catch(function() {
+        personagensData = null;
+        if (randomizerResultado) {
+          randomizerResultado.innerHTML = '<p>NÃ£o foi possÃ­vel carregar os personagens.</p>';
+        }
+        return null;
+      });
+  }
+
+  function garantirDados(callback) {
+    if (personagensData) {
+      callback();
+      return;
+    }
+    carregarPersonagens().then(function() {
+      callback();
+    });
+  }
+
+  if (btnSortearValorant) {
+    btnSortearValorant.addEventListener('click', function() {
+      garantirDados(function() {
+        if (!personagensData) return;
+        mostrarPersonagem(sortear(personagensData.valorant));
+      });
+    });
+  }
+
+  if (btnSortearLol) {
+    btnSortearLol.addEventListener('click', function() {
+      garantirDados(function() {
+        if (!personagensData) return;
+        mostrarPersonagem(sortear(personagensData.lol));
+      });
+    });
+  }
+
+  // Sobre nÃƒÂ³s - carousel com todas as fotos da pasta img (exclui ÃƒÂ­cones/logos)
   const sobreTrack = document.getElementById('sobre-carousel-track');
   if (sobreTrack) {
     const allImages = [
@@ -361,3 +430,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
+
