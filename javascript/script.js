@@ -263,4 +263,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 
+  // BotÃ£o de som do vÃ­deo
+  const video = document.querySelector('.vid');
+  const btnVideoSound = document.getElementById('btn-video-sound');
+
+  if (video && btnVideoSound) {
+    btnVideoSound.addEventListener('click', function() {
+      video.muted = !video.muted;
+      btnVideoSound.setAttribute('aria-pressed', String(!video.muted));
+      btnVideoSound.setAttribute('aria-label', video.muted ? 'Ativar som do vÃ­deo' : 'Desativar som do vÃ­deo');
+      btnVideoSound.innerHTML = video.muted
+        ? '<i class="fa-solid fa-volume-xmark"></i><span>Som</span>'
+        : '<i class="fa-solid fa-volume-high"></i><span>Som</span>';
+    });
+  }
+
+  // CabeÃ§alho transparente no topo
+  const header = document.querySelector('.cabecalho-riot');
+  function atualizarHeader() {
+    if (!header) return;
+    if (window.scrollY <= 8) {
+      header.classList.add('cabecalho-transparente');
+    } else {
+      header.classList.remove('cabecalho-transparente');
+    }
+  }
+  atualizarHeader();
+  window.addEventListener('scroll', atualizarHeader, { passive: true });
+
+  // Slider de jogos
+  const jogosTrack = document.getElementById('jogos-track');
+  const jogosSetaEsq = document.getElementById('jogos-seta-esq');
+  const jogosSetaDir = document.getElementById('jogos-seta-dir');
+
+  function moverJogos(direcao) {
+    if (!jogosTrack) return;
+    const item = jogosTrack.querySelector('.jogo-item');
+    const deslocamento = item ? item.offsetWidth + 24 : 260;
+    jogosTrack.scrollBy({ left: direcao * deslocamento, behavior: 'smooth' });
+  }
+
+  if (jogosSetaEsq) {
+    jogosSetaEsq.addEventListener('click', function() {
+      moverJogos(-1);
+    });
+  }
+
+  if (jogosSetaDir) {
+    jogosSetaDir.addEventListener('click', function() {
+      moverJogos(1);
+    });
+  }
+
 });
