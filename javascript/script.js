@@ -315,4 +315,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Sobre nÃ³s - carousel com todas as fotos da pasta img (exclui Ã­cones/logos)
+  const sobreTrack = document.getElementById('sobre-carousel-track');
+  if (sobreTrack) {
+    const allImages = [
+      '2xko.webp',
+      '2XKO_game_logo.svg.png',
+      '736px-Legends_of_Runeterra_logo.png',
+      'FAVICON.png',
+      'imagem_de_fundo.png',
+      'league_of_legendes.webp',
+      'League_of_Legends_logo.png',
+      'League_of_Legends_Wild_Rift_logo.svg.png',
+      'Legends_of_Runeterra_logo.png',
+      'Logo.png',
+      'loud_cblol.webp',
+      'loud_champions.jpg',
+      'nekko_lol.jpeg',
+      'Rammus.png',
+      'raze_heaven_or_hell_valorant_spray_waterproof_sticker-removebg-preview-518520e2659b331d8517112276734463-640-0 1.png',
+      'runeterra.png',
+      'Teamfight_Tactics_logo.svg.png',
+      'tft.jpg',
+      'Valorant-Logo.png',
+      'valorant.webp',
+      'Vector.png',
+      'vivo_wildwift.webp'
+    ];
+
+    const photoImages = allImages.filter(function(name) {
+      if (!/\.(jpg|jpeg|png|webp)$/i.test(name)) {
+        return false;
+      }
+      return !/(logo|favicon|vector|icon|sticker|spray|removebg|fundo|rammus)/i.test(name);
+    });
+
+    const loopImages = photoImages.concat(photoImages);
+    loopImages.forEach(function(name) {
+      const img = document.createElement('img');
+      img.src = 'img/' + name;
+      img.alt = 'Imagem do universo Riot';
+      img.loading = 'lazy';
+      sobreTrack.appendChild(img);
+    });
+  }
+
 });
