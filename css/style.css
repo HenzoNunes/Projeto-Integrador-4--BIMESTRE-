@@ -36,6 +36,7 @@ body{
         linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
     color: var(--color-text);
     min-height: 100vh;
+    padding-top: 72px;
 }
 
 .title{
@@ -148,6 +149,28 @@ body{
 
     .footer-logo{
         justify-self: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer-retangulo{
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        margin: 0;
+        z-index: 900;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        will-change: transform;
+    }
+
+    .footer-retangulo.footer-escondido{
+        transform: translateY(140%);
+        opacity: 0;
+    }
+
+    body{
+        padding-bottom: 120px;
     }
 }
 
@@ -319,6 +342,10 @@ body{
     .icones-sociais .icone{
         width: 32px;
         height: 32px;
+    }
+
+    body{
+        padding-top: 120px;
     }
 }
 

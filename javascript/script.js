@@ -178,4 +178,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // RodapÃ© flutuante no mobile - sobe ao rolar para baixo
+  const footer = document.querySelector('.footer-retangulo');
+  if (footer && window.matchMedia('(max-width: 700px)').matches) {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function atualizarFooter() {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY;
+
+      if (currentY <= 0) {
+        footer.classList.remove('footer-escondido');
+      } else if (delta > 8) {
+        footer.classList.add('footer-escondido');
+      } else if (delta < -8) {
+        footer.classList.remove('footer-escondido');
+      }
+
+      lastScrollY = currentY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(atualizarFooter);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
 });
