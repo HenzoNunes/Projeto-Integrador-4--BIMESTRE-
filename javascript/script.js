@@ -4,14 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Botão LOGIN - Abre modal de login
   const btnLogin = document.getElementById('btn-login');
+  const btnLoginMobile = document.getElementById('btn-login-mobile');
   const loginModal = document.getElementById('login-modal');
   const btnFecharLogin = document.getElementById('btn-fechar-login');
   const loginForm = document.getElementById('login-form');
 
-  if (btnLogin && loginModal) {
-    btnLogin.addEventListener('click', function() {
+  function abrirLoginModal() {
+    if (loginModal) {
       loginModal.classList.remove('login-modal-oculto');
       loginModal.classList.add('login-modal-visivel');
+    }
+  }
+
+  if (btnLogin) {
+    btnLogin.addEventListener('click', abrirLoginModal);
+  }
+
+  if (btnLoginMobile) {
+    btnLoginMobile.addEventListener('click', function() {
+      fecharMobileMenu();
+      abrirLoginModal();
     });
   }
 
@@ -53,6 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  const mobileLogoLink = document.getElementById('mobile-logo-link');
+  if (mobileLogoLink) {
+    mobileLogoLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      fecharMobileMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // Nav links internos - Scroll suave (sem redirect)
   document.querySelectorAll('.nav-link-interno').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -63,8 +84,42 @@ document.addEventListener('DOMContentLoaded', function() {
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
+      fecharMobileMenu();
     });
   });
+
+  // Menu Mobile
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuFechar = document.getElementById('mobile-menu-fechar');
+
+  function abrirMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('mobile-menu-oculto');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+  }
+
+  function fecharMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('mobile-menu-oculto');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  }
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', abrirMobileMenu);
+  }
+
+  if (mobileMenuFechar) {
+    mobileMenuFechar.addEventListener('click', fecharMobileMenu);
+  }
+
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target === mobileMenu) {
+        fecharMobileMenu();
+      }
+    });
+  }
 
   // Seta do Hub - Faz scroll suave até a seção de placeholders
   const hubArrow = document.getElementById('hub-arrow');
